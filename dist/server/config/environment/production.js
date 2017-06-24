@@ -13,7 +13,7 @@ module.exports = {
 
   // MongoDB connection options
   mongo: {
-    uri: process.env.MONGODB_URI || process.env.MONGOHQ_URL || process.env.OPENSHIFT_MONGODB_DB_URL + process.env.OPENSHIFT_APP_NAME || 'mongodb://umangkrsinha@gmail.com:trafficserver@ds139082.mlab.com:39082/trafficserverdb'
+    uri: process.env.MONGODB_URI || process.env.MONGOHQ_URL || process.env.OPENSHIFT_MONGODB_DB_URL + process.env.OPENSHIFT_APP_NAME || 'mongodb://trafficdb:trafficdb@ds139082.mlab.com:39082/trafficserverdb'
   }
 };
 //# sourceMappingURL=production.js.map
