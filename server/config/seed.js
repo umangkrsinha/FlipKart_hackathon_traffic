@@ -6,6 +6,7 @@
 'use strict';
 import Thing from '../api/thing/thing.model';
 import User from '../api/user/user.model';
+import TrafficData, DeviceData from '../api/trafficData/trafficData.model';
 import config from './environment/';
 
 export default function seedDatabaseIfNeeded() {
@@ -44,6 +45,52 @@ export default function seedDatabaseIfNeeded() {
       })
       .then(() => console.log('finished populating things'))
       .catch(err => console.log('error populating things', err));
+
+    DeviceData.find({}).remove()
+    .then(() => {
+        DeviceData.create({
+          junction: 1,
+          lat: 0,
+          lon: 0
+        },{
+          junction: 2,
+          lat:1,
+          lon:1
+        }, {
+          junction: 3,
+          lat: 3,
+          lon: 3
+        }, {
+          junction: 4,
+          lat: 4,
+          lon: 4
+        })
+        .then(() => console.log('finished populating DeviceData'))
+        .catch(err => console.log('error populating DeviceData', err));
+    });
+
+    TrafficData.find({}).remove()
+      .then(() => {
+        TrafficData.create({
+          device: 1,
+          timestamp: 1,
+          macadd: '1111.1111.1111.1111'
+        },{
+          device: 2,
+          timestamp: 2,
+          macadd: '2222.2222.2222.2222'
+        },{
+          device: 3,
+          timestamp: 3,
+          macadd: '3333.3333.3333.3333'
+        },{
+          device: 4,
+          timestamp: 4,
+          macadd: '4444.4444.4444.4444'
+        })
+        .then(() => console.log('finished populating TrafficData'))
+        .catch(err => console.log('error populating TrafficData', err));
+      });
 
     User.find({}).remove()
       .then(() => {
