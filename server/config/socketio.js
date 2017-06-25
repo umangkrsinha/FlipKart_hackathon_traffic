@@ -16,6 +16,7 @@ function onConnect(socket) {
   });
 
   // Insert sockets below
+  require('../api/deviceData/deviceData.socket').register(socket);
   require('../api/trafficData/trafficData.socket').register(socket);
   require('../api/thing/thing.socket').register(socket);
 }

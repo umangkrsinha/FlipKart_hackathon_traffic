@@ -6,7 +6,8 @@
 'use strict';
 import Thing from '../api/thing/thing.model';
 import User from '../api/user/user.model';
-import TrafficData, DeviceData from '../api/trafficData/trafficData.model';
+import TrafficData from '../api/trafficData/trafficData.model';
+import DeviceData from '../api/deviceData/deviceData.model';
 import config from './environment/';
 
 export default function seedDatabaseIfNeeded() {
